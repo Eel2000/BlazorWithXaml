@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="BlazorWithXaml.UserControles.HomeUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:BlazorWithXaml.UserControles"
+    VerticalContentAlignment="Center">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--#region Top bar-->
+        <StackPanel Grid.Row="0">
+            <Border Background="#0000FF" Height="70">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="13" Direction="-90"
+                                                  ShadowDepth="2" Color="DarkGray" />
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label FontSize="34" Foreground="White" Padding="10">Xaml For Blazor</Label>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center">
+                        <TextBlock Text="Home" Foreground="White" FontSize="20" Cursor="Hand" VerticalContentAlignment="Center"
+                                   MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"
+                                   MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave"/>
+                        <TextBlock Text="Services" Foreground="White" FontSize="20" Margin="10,0,10,0"/>
+                        <TextBlock Text="Pricing" Foreground="White" FontSize="20" Margin="0,0,10,0"/>
+                        <TextBlock Text="About" Foreground="White" FontSize="20"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <!--#endregion-->
+        
+    </Grid>
+</UserControl>
